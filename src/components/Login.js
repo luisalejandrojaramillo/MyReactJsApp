@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Copyright  from './partials/Copyright';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
@@ -46,11 +46,7 @@ export default function Login() {
         }
     ]
     
-
     const classes = useStyles();
-
-    const [username, setUserName] = useState();
-    const [password, setPassword] = useState();
 
     async function  handleSubmit(event){
         event.preventDefault();

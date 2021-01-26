@@ -10,6 +10,8 @@
 * ``` npm install --save navbar-react ```
 * ```  ```
 
+## License
+[MIT License](/LICENSE)
 
 ## Author
 [Luis Alejandro Jaramillo Rincon :milky_way:](https://github.com/luisalejandrojaramillo)

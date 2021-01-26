@@ -18,6 +18,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Barra(){
     const classes = useStyles();
+    function handleSubmitLogout(){
+      localStorage.clear();
+    }
   
     return (
         <div className={classes.root}>
@@ -30,9 +33,9 @@ export default function Barra(){
                         My App
                     </Typography>
 
-                    <Button href="/#hi" color="inherit" align="left">My Info</Button>
+                    <Button href="/info" color="inherit" align="left">My Info</Button>
                     <Button href="/#hi" color="inherit" align="right">Marvel</Button>
-                    <Button href="/#hi" color="inherit" edge="end">LogOut</Button>
+                    <Button href="/" color="inherit" edge="end" onClick={handleSubmitLogout}>LogOut</Button>
 
                 </Toolbar>
             </AppBar>
