@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Barra(){
     const classes = useStyles();
+    const name = localStorage.getItem("userName")
     function handleSubmitLogout(){
       localStorage.clear();
     }
@@ -30,11 +31,11 @@ export default function Barra(){
                         <Menu />
                     </IconButton>
                     <Typography variant='h6' className={classes.title}>
-                        My App
+                        My App - Hi {name} !
                     </Typography>
 
                     <Button href="/info" color="inherit" align="left">My Info</Button>
-                    <Button href="/#hi" color="inherit" align="right">Marvel</Button>
+                    <Button href="/marvel" color="inherit" align="right">Marvel</Button>
                     <Button href="/" color="inherit" edge="end" onClick={handleSubmitLogout}>LogOut</Button>
 
                 </Toolbar>

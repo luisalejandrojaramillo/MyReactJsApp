@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import Copyright  from './partials/Copyright';
 import Box from '@material-ui/core/Box';
-
 import Barra from './partials/Barra'
 
 export default class MyInfo extends Component {
     render() {
         const name = localStorage.getItem("userName")
-        console.log(name);
+        //console.log(name);
 
         return (
             <div>
