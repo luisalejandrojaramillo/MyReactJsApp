@@ -2,9 +2,24 @@ import React, { Component } from 'react';
 import Copyright  from './partials/Copyright';
 import Box from '@material-ui/core/Box';
 import Barra from './partials/Barra'
+import { withStyles  } from '@material-ui/core/styles';
+import { Grid, Paper } from '@material-ui/core';
 
-export default class MyInfo extends Component {
+const useStyles = theme => ({
+    root: {
+      flexGrow: 1,
+    },
+    paper: {
+      padding: theme.spacing(2),
+      textAlign: 'center'
+    },
+});
+
+class MyInfo extends Component {
+
     render() {
+        const { classes } = this.props;
+
         const name = localStorage.getItem("userName")
         //console.log(name);
 
@@ -20,6 +35,32 @@ export default class MyInfo extends Component {
                 <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, molestias rerum dignissimos hic ea natus eligendi nam aspernatur maiores pariatur beatae autem nihil molestiae omnis optio explicabo adipisci atque vel!
                 </p>
+                <Grid container spacing={3}>
+                    <Grid item xs={8}>
+                        <Paper className={classes.paper}>
+                            <h1>Vamos a tener mi informacion</h1>
+                            <p>
+                                Hi
+                            </p>
+                            <br/>
+                            <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, molestias rerum dignissimos hic ea natus eligendi nam aspernatur maiores pariatur beatae autem nihil molestiae omnis optio explicabo adipisci atque vel!
+                            </p>
+                        </Paper>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <Paper className={classes.paper}>
+                            <h1>Vamos a tener mas informacion mia</h1>
+                            <p>
+                                Hi
+                            </p>
+                            <br/>
+                            <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, molestias rerum dignissimos hic ea natus eligendi nam aspernatur maiores pariatur beatae autem nihil molestiae omnis optio explicabo adipisci atque vel!
+                            </p>
+                        </Paper>
+                    </Grid>
+                </Grid>
                 <Box mt={5}>
                     <Copyright />
                 </Box>
@@ -27,3 +68,4 @@ export default class MyInfo extends Component {
         )
     }
 }
+export default withStyles(useStyles)(MyInfo)

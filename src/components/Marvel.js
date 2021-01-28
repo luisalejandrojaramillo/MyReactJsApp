@@ -25,25 +25,32 @@ const useStyles = theme => ({
 
 //const 
 class Marvel extends Component{ 
+    /** 
     state = {
         characters: []
     }
-    componentDidMount(){
-        axios.get(`http://gateway.marvel.com/v1/public/characters?ts=1&apikey=2282c25b40fb901c7bd7b8915f5676ad&hash=a8ac3fcde54f655abf74e2b429922456`)
+    async componentDidMount(){
+        await axios.get(`http://gateway.marvel.com/v1/public/characters?ts=1&apikey=2282c25b40fb901c7bd7b8915f5676ad&hash=a8ac3fcde54f655abf74e2b429922456`)
         .then(res => {
           const characters = res.data;
           this.setState({ characters });
         })
+    }*/
+    async componentDidMount(){
+        try{
+            const res = await axios.get(`http://gateway.marvel.com/v1/public/characters?ts=1&apikey=2282c25b40fb901c7bd7b8915f5676ad&hash=a8ac3fcde54f655abf74e2b429922456`)
+            const characters = await res.data.data.results
+            console.log(characters);
+            this.setState({data: characters.splice(0,10)});
+        }catch(e){
+            console.log(e)
+        }
     }
     render(){
-        const { classes } = this.props
-        console.log(this.state.characters)
-        try{
-            const { data } = this.state.characters.data.results
-            console.log(data)
-        }catch(error){
-            console.log("Datos no cargados")
-        }
+        const { classes } = this.props;
+        //const { data } = this.state;
+        //console.log(data)
+
         return (
             <div>
                 <Barra />
