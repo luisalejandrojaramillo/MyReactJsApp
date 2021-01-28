@@ -13,18 +13,16 @@ function App(){
   const notFoundView = () => <PageNotFound />
   const marvelView = () => <Marvel />
 
-
   return (
+    <Router>
+      <Switch>
+        <Route exact path="/" component={LoginView} />
+        <Route exact path="/login" component={LoginView} />
+        <PrivateRoute exact path="/info" component={myInfoView} />
+        <PrivateRoute exact path="/marvel" component={marvelView} />
 
-  <Router>
-    <Switch>
-      <Route exact path="/" component={LoginView} />
-      <Route exact path="/login" component={LoginView} />
-      <PrivateRoute exact path="/info" component={myInfoView} />
-      <PrivateRoute exact path="/marvel" component={marvelView} />
-
-      <Route component={notFoundView}/>
-    </Switch>
-  </Router>
+        <Route component={notFoundView}/>
+      </Switch>
+    </Router>
 );}
 export default App;

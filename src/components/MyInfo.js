@@ -19,7 +19,6 @@ class MyInfo extends Component {
 
     render() {
         const { classes } = this.props;
-
         const name = localStorage.getItem("userName")
         //console.log(name);
 

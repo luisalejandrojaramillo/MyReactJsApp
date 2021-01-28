@@ -9,8 +9,6 @@ import { Grid, Paper } from '@material-ui/core';
 /**
 public:2282c25b40fb901c7bd7b8915f5676ad 
 private: 46b88cc40fc9563c75d174224adb5c9cab6a4bcc
-
-
  */
 
 const useStyles = theme => ({
